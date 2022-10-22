@@ -1,0 +1,10 @@
+name: auto approve
+on: pull_reqest_target
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissoins:
+      pull-requests: write
+    steps:
+      - uses: hmarr/auto-approve-action@v3
