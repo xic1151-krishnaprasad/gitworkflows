@@ -2,11 +2,13 @@ name: "Pull Request Labler"
 on:
   - pull_request
 jobs:
-  lable:
+  build:
+    name: Add Size lable to PR
     runs-on: ubuntu_latest
-    step:
-      - uses: srvaroa/labeler@v0.8
+    steps:
+      - name: Add Size Label to PR
+        uses: WizardOhio24/label-pr-size-action@master
         with:
-          config_path: .github/labeler_config.yml
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          size-label-color: '10, very small, ffaf65 | 100, small, ff9e58 | 500, medium, ff9654 | 2000, large, ff905d | 100000, massive, ff905d'
+          
