@@ -3,7 +3,7 @@ on:
   - pull_request
 jobs:
   lable:
-    runs-on:
+    runs-on: ubuntu_latest
     step:
       - uses: srvaroa/labeler@v0.8
         with:
